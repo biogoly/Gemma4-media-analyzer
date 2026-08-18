@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.codex-pytest-temp*/
+*.egg-info/
+dist/
+build/
+analysis-output/
+.gemma4-cache/
+*.partial
+/input/
+/output/
