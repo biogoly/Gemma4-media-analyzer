@@ -1,0 +1,52 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "gemma4-media-analyzer"
+version = "0.8.0"
+description = "Resumable arbitrary-length audio transcription and video scene analysis with Gemma 4"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+authors = [{ name = "Gemma-4 Media Analyzer contributors" }]
+dependencies = []
+
+[project.optional-dependencies]
+transformers = [
+  "accelerate",
+  "librosa",
+  "torch",
+  "torchvision",
+  "transformers>=5.0",
+]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.9",
+]
+all = [
+  "accelerate",
+  "librosa",
+  "torch",
+  "torchvision",
+  "transformers>=5.0",
+]
+
+[project.scripts]
+gemma4-media = "gemma4_media_analyzer.cli:main"
+gemma4-video = "gemma4_media_analyzer.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/gemma4_media_analyzer", "src/gemma4_video_analyzer"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501"]
