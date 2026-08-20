@@ -1,4 +1,5 @@
 # Gemma-4 Media Analyzer
+<img width="1672" height="941" alt="image" src="https://github.com/user-attachments/assets/782937ec-0974-405c-a616-5b4beb9dd537" />
 
 Gemma-4 Media Analyzer turns audio or video of arbitrary length into one chronological Markdown script and
 one machine-readable JSON document. FFmpeg normalizes the source into resumable windows of no more than 30
